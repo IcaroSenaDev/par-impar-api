@@ -28,6 +28,8 @@ app.post('/verificar', (req, res) => {
     return res.status(400).json({ error: 'Por favor, forneça um número válido.' });
   }
 
+  console.log(`Número recebido: ${numero}`); // Verificação no console
+
   const resultado = verificarParOuImpar(numero);
 
   if (resultado.startsWith('Erro')) {
@@ -36,6 +38,7 @@ app.post('/verificar', (req, res) => {
 
   res.json({ resultado });
 });
+
 
 // Rota para a página principal (HTML)
 app.get('/', (req, res) => {
